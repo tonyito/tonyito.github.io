@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1)
   },
   media: {
-    height: 140
+    height: 160,
   }
 }));
 
@@ -42,7 +42,7 @@ const CardContainer = ({
               <CardMedia
                 className={classes.media}
                 image={imageSource}
-                title='Contemplative Reptile'
+                title='Project'
               />
               <CardContent>
                 <Typography gutterBottom variant='h5' component='h2'>
