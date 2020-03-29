@@ -18,9 +18,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 
 type Props = {
-  title: string;
-  setJpn(arg: boolean): void;
-  jpn: boolean;
+  title?: string;
+  setJpn?: (arg: boolean) => void;
+  jpn?: boolean;
 };
 
 const useStyles = makeStyles(theme => ({

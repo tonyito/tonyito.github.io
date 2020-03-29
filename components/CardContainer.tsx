@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 const useStyles = makeStyles(theme => ({
   card: {
     maxWidth: 345,
+    minWidth: 320,
     padding: theme.spacing(1)
   },
   media: {
