@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import Typography from '@material-ui/core/Typography';
@@ -17,7 +17,7 @@ import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
+import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
 
 type Props = {
   title?: string;
@@ -25,7 +25,7 @@ type Props = {
   jpn?: boolean;
 };
 
-function Alert(props: any) {
+function Alert(props: AlertProps) {
   return <MuiAlert elevation={6} variant='filled' {...props} />;
 }
 
@@ -48,51 +48,54 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const Layout: React.FunctionComponent<Props> = ({
+const Layout: React.FC<Props> = ({
   children,
   title = 'This is the default title',
   setJpn,
   jpn
 }) => {
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const [snackOpen, setSnackOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [snackOpen, setSnackOpen] = useState(false);
 
-  const anchorRef: any = React.useRef(null);
+  const anchorRef = useRef<HTMLButtonElement>(null);
+  const prevOpen = useRef(open);
 
-  const handleToggle = () => {
-    setOpen(prevOpen => !prevOpen);
-  };
-
-  const handleClose = (event: React.MouseEvent<Document, MouseEvent>) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
+  useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current.focus();
     }
+    prevOpen.current = open;
+  }, [open]);
 
-    setOpen(false);
-  };
+  const classes = useStyles();
 
   const handleClick = () => {
     setSnackOpen(true);
   };
 
-  const handleSnackClose = (event: any, reason: any) => {
-    event;
+  const handleClose = (event: React.MouseEvent<EventTarget>) => {
+    if (
+      anchorRef.current &&
+      anchorRef.current.contains(event.target as HTMLElement)
+    ) {
+      return;
+    }
+    setOpen(false);
+  };
+
+  const handleSnackClose = (
+    event?: React.SyntheticEvent<Element, Event>,
+    reason?: string
+  ) => {
     if (reason === 'clickaway') {
       return;
     }
-
     setSnackOpen(false);
   };
 
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      anchorRef.current.focus();
-    }
-
-    prevOpen.current = open;
-  }, [open]);
+  const handleToggle = () => {
+    setOpen(prevOpen => !prevOpen);
+  };
 
   return (
     <div>
