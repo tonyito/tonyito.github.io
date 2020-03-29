@@ -14,7 +14,8 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 345,
     minWidth: 320,
     padding: theme.spacing(1),
-    disableRipple: true
+    disableRipple: true,
+    marginBottom: '20px'
   },
   media: {
     height: 160
