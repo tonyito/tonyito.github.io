@@ -31,13 +31,13 @@ const IndexPage = ({ jpn, setJpn }: { jpn: boolean; setJpn: (arg: boolean) => vo
     }, 
     compost: {
       title: `Compost`,
-      content: `Compost is a Pastebin influenced travel checklist application with a private url generator. The uuidv4 generated url allows users to avoid the hassle of the sign up process when creating a list that can be tossed once the event is over.`,
+      content: `Compost is a Pastebin influenced travel checklist application with a private url generator. The uuidv4 generated url lets users avoid the hassle of creating an account, and instead allows for quick collaboration through a privately shared link.`,
       imageSource: `/images/compost.png`,
       url: `https://github.com/compost-io/Compost`
     }, 
     polobot: {
       title: `Polobot`,
-      content: `Polobot is an email notifier for the Poloniex cryptocurrency exchange written in Python that pulls data from the Poloniex API to send the user email notifications when buy and sell orders were fulfilled.`,
+      content: `Polobot is an email notifier for the Poloniex cryptocurrency exchange written in Python that makes secure API requests to send the user email notifications when buy and sell orders were fulfilled.`,
       imageSource: `/images/poloniex.jpg`,
       url: `https://github.com/tonyito/Polobot`
     }, 
@@ -71,7 +71,7 @@ const IndexPage = ({ jpn, setJpn }: { jpn: boolean; setJpn: (arg: boolean) => vo
             <Typography>
               <h1>Tony Ito-Cole</h1>
                 <div style={{ marginBottom: '20px', marginTop: '-20px', color: '#808080' }}>
-                  Software Engineer. Los Angeles, CA. Here are some of my projects.
+                  Software Engineer. Los Angeles, CA. Here are some of the projects I've worked on.
                 </div>
             </Typography>
           </Layout>
@@ -91,7 +91,7 @@ const IndexPage = ({ jpn, setJpn }: { jpn: boolean; setJpn: (arg: boolean) => vo
         )}
       </Container>
       <Container>
-        <Grid container spacing={3}>
+        <Grid container spacing={0}>
           <CardContainer
             jpn={jpn}
             title={data.reactype.title}
@@ -114,7 +114,7 @@ const IndexPage = ({ jpn, setJpn }: { jpn: boolean; setJpn: (arg: boolean) => vo
             url={data.polobot.url}
           />
         </Grid>
-        <Grid container spacing={3}>
+        <Grid container spacing={0} style={{marginTop: '20px'}}>
           <CardContainer
             jpn={jpn}
             title={data.isi.title}

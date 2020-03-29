@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 
 const AboutPage: React.FunctionComponent = () => (
-  <Layout title="About | Next.js + TypeScript Example">
+  <Layout title="Resume | Next.js + TypeScript">
     <h1>Resume</h1>
     <p>Link to Resume will go here once ready.</p>
     <p>

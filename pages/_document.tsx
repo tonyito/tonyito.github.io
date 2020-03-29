@@ -20,25 +20,6 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
           />
-          <style jsx global>
-            {`
-              html,
-              body {
-                height: 100%;
-                width: 100%;
-              }
-              *,
-              *:after,
-              *:before {
-                box-sizing: border-box;
-              }
-              body {
-                font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-                font-size: 1rem;
-                margin: 0;
-              }
-            `}
-          </style>
         </Head>
         <body>
           <Main />

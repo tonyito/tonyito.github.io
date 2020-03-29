@@ -16,12 +16,18 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
 type Props = {
   title?: string;
   setJpn?: (arg: boolean) => void;
   jpn?: boolean;
 };
+
+function Alert(props: any) {
+  return <MuiAlert elevation={6} variant='filled' {...props} />;
+}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -50,6 +56,8 @@ const Layout: React.FunctionComponent<Props> = ({
 }) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
+  const [snackOpen, setSnackOpen] = React.useState(false);
+
   const anchorRef: any = React.useRef(null);
 
   const handleToggle = () => {
@@ -62,6 +70,19 @@ const Layout: React.FunctionComponent<Props> = ({
     }
 
     setOpen(false);
+  };
+
+  const handleClick = () => {
+    setSnackOpen(true);
+  };
+
+  const handleSnackClose = (event: any, reason: any) => {
+    event;
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setSnackOpen(false);
   };
 
   const prevOpen = React.useRef(open);
@@ -140,10 +161,10 @@ const Layout: React.FunctionComponent<Props> = ({
                         <Paper>
                           <ClickAwayListener onClickAway={handleClose}>
                             <MenuList autoFocusItem={open} id='menu-list-grow'>
-                              <CopyToClipboard
-                                text='tonyitocole@gmail.com'
-                                >
-                                <MenuItem value='tonyitocole@gmail.com'>
+                              <CopyToClipboard text='tonyitocole@gmail.com'>
+                                <MenuItem
+                                  value='tonyitocole@gmail.com'
+                                  onClick={() => handleClick()}>
                                   tonyitocole@gmail.com
                                 </MenuItem>
                               </CopyToClipboard>
@@ -173,6 +194,16 @@ const Layout: React.FunctionComponent<Props> = ({
               </Grid>
             </Toolbar>
           </AppBar>
+          <Snackbar
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'right'
+            }}
+            open={snackOpen}
+            autoHideDuration={6000}
+            onClose={handleSnackClose}>
+            <Alert onClose={handleSnackClose}>Email address copied!</Alert>
+          </Snackbar>
         </div>
       </header>
       {children}
