@@ -18,9 +18,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 
 type Props = {
-  title?: string;
-  setJpn?: any;
-  jpn?: boolean;
+  title: string;
+  setJpn(arg: boolean): void;
+  jpn: boolean;
 };
 
 const useStyles = makeStyles(theme => ({
@@ -56,7 +56,7 @@ const Layout: React.FunctionComponent<Props> = ({
     setOpen(prevOpen => !prevOpen);
   };
 
-  const handleClose = (event: any) => {
+  const handleClose = (event: React.MouseEvent<Document, MouseEvent>) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
     }

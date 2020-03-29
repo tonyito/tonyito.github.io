@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const IndexPage = ({ jpn, setJpn }: { jpn: boolean; setJpn: any }) => {
+const IndexPage = ({ jpn, setJpn }: { jpn: boolean; setJpn: (arg: boolean) => void }) => {
   const classes = useStyles();
   const data = {
     reactype: {
