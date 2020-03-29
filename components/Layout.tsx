@@ -108,26 +108,17 @@ const Layout: React.FunctionComponent<Props> = ({
               <Grid container justify='space-between'>
                 <Grid item style={{ marginTop: '15px' }}>
                   <Typography className={classes.title}>
-                    <Button style={{ color: 'white' }} href='/'>
-                      Home
+                    {/* <Button style={{ color: 'white' }} href='/'>
+                      {!jpn ? 'Home' : 'ホーム'}
+                    </Button> */}
+                    {/* <Button style={{ color: 'white' }} href='/resume'>
+                      {!jpn ? 'Resume' : '履歴書'}
+                    </Button> */}
+                    <Button
+                      style={{ color: 'white' }}
+                      onClick={() => setJpn(!jpn)}>
+                      {!jpn ? '日本語' : 'English'}
                     </Button>
-                    <Button style={{ color: 'white' }} href='/resume'>
-                      Resume
-                    </Button>
-                    {!jpn && (
-                      <Button
-                        style={{ color: 'white' }}
-                        onClick={() => setJpn(!jpn)}>
-                        日本語
-                      </Button>
-                    )}
-                    {jpn && (
-                      <Button
-                        style={{ color: 'white' }}
-                        onClick={() => setJpn(!jpn)}>
-                        English
-                      </Button>
-                    )}
                   </Typography>
                 </Grid>
                 <Grid item>
@@ -141,7 +132,7 @@ const Layout: React.FunctionComponent<Props> = ({
                     aria-controls={open ? 'menu-list-grow' : undefined}
                     aria-haspopup='true'
                     onClick={handleToggle}>
-                    Contact
+                    {jpn ? 'お問い合わせ' : 'Contact'}
                   </Button>
                   <Popper
                     open={open}
@@ -202,7 +193,11 @@ const Layout: React.FunctionComponent<Props> = ({
             open={snackOpen}
             autoHideDuration={6000}
             onClose={handleSnackClose}>
-            <Alert onClose={handleSnackClose}>Email address copied!</Alert>
+            <Alert onClose={handleSnackClose}>
+              {!jpn
+                ? 'Email address copied!'
+                : 'メールアドレスがコピーされました！'}
+            </Alert>
           </Snackbar>
         </div>
       </header>

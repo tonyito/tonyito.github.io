@@ -22,22 +22,22 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const CardContainer = ({
-  jpn,
   title,
   content,
   imageSource,
-  url
+  url,
+  jpn
 }: {
-  jpn: boolean;
   title: string;
   content: string;
   imageSource: string;
   url: string;
+  jpn: boolean;
 }) => {
   const classes = useStyles();
   return (
     <>
-      {!jpn && (
+      {(
         <Grid item xs>
           <Card className={classes.card}>
             <CardMedia
@@ -55,7 +55,7 @@ const CardContainer = ({
             </CardContent>
             <CardActions>
               <Button size='small' color='primary' href={url}>
-                Learn More
+                {!jpn ? 'Learn More' : '詳しくはこちら'}
               </Button>
             </CardActions>
           </Card>
