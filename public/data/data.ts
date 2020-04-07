@@ -72,5 +72,41 @@ export const data = {
       content: `蛍光染色された細胞のカウントを自動化する研究者の負担を軽減するプログラム。 このプログラムを使用すると、ユーザーは明るさと偏心を調整するだけで、画像上の細胞カウントを自動化できます。 OpenCVコンピュータービジョンライブラリを使用しするPythonで書かれたプログラムです。`,
       imageSource: `/images/cells.jpg`,
       url: `http://callaway.salk.edu`
-    }
+    },
+    threeD: {
+      title: `Mouse Brain 3D Reconstruction`,
+      content: `Using Java and FIJI(ImageJ), post-mortem brain tissue of a mouse was scanned with a fluorecent microscope and reconstructed using automation before being rendered by the IMARIS 3D engine. The green pixels indicate adeno-associated starter virus carrying a rabies glycoprotein, while the red pixels are the rabies virus that spread in a retrograde matter by only one synapse.`,
+      imageSource: `/images/3D_Reconstruction.gif`,
+      url: `http://callaway.salk.edu`
+    },
+    threeDjp: {
+      title: `マウスの脳の3D再構成`,
+      content: `JavaとFIJI（ImageJ）を使用して、マウスの死後の脳組織を蛍光顕微鏡でスキャンし、IMARIS 3-Dエンジンでレンダリングする前に自動化を使用して再構築しました。 緑のピクセルは狂犬病糖タンパク質を運ぶアデノ随伴スターターウイルスを示し、赤のピクセルは1つのシナプスのみで逆行性物質に広がる狂犬病ウイルスです。`,
+      imageSource: `/images/3D_Reconstruction.gif`,
+      url: `http://callaway.salk.edu`
+    },
+    paper: {
+      title: `Improved Monosynaptic Neural Circuit Tracing Using Engineered Rabies Virus Glycoproteins`,
+      content: `This paper demonstrated that an optimized rabies glycoprotein (oG) increases the tracing efficiency for long-distance input neurons up to 20-fold compared to B19G. oG-mediated rabies tracing will therefore allow identification and study of more complete monosynaptic input neural networks.`,
+      imageSource: `/images/paper.png`,
+      url: `https://doi.org/10.1016/j.celrep.2016.03.067`
+    },
+    paperjp: {
+      title: `設計された狂犬病ウイルス糖タンパク質を用いた改善された単シナプス神経回路の追跡`,
+      content: `この論文では、最適化された狂犬病糖タンパク質（oG）が、B19Gと比較して、長距離入力ニューロンのトレース効率を最大20倍向上させることを示しました。 したがって、oGを介した狂犬病の追跡により、より完全なモノシナプス入力ニューラルネットワークの識別と調査が可能になります。`,
+      imageSource: `/images/paper.png`,
+      url: `https://doi.org/10.1016/j.celrep.2016.03.067`
+    },
+    taco: {
+      title: `Taco Finder`,
+      content: `1st place winner project for a 24-hour hackathon. Designed a fun little chrome extension utilizing the Yelp API and geolocation to find the closest taco shops near the user with a click of a button.`,
+      imageSource: `/images/tacos.gif`,
+      url: `https://github.com/jdnordy/taco-finder`
+    },
+    tacojp: {
+      title: `タコスファインダー`,
+      content: `24時間ハッカソン1位のプロジェクト。 Yelp APIと地理位置情報を利用して、ボタンをクリックするだけでユーザーの近くにある最寄りのタコス店を見つける、楽しい小さなChrome拡張機能を作りました。`,
+      imageSource: `/images/tacos.gif`,
+      url: `https://github.com/jdnordy/taco-finder`
+    },
   };

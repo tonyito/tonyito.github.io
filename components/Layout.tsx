@@ -111,12 +111,12 @@ const Layout: React.FC<Props> = ({
               <Grid container justify='space-between'>
                 <Grid item style={{ marginTop: '15px' }}>
                   <Typography className={classes.title}>
-                    {/* <Button style={{ color: 'white' }} href='/'>
+                    <Button style={{ color: 'white' }} href='/'>
                       {!jpn ? 'Home' : 'ホーム'}
-                    </Button> */}
-                    {/* <Button style={{ color: 'white' }} href='/resume'>
+                    </Button>
+                    <Button style={{ color: 'white' }} href='/resume'>
                       {!jpn ? 'Resume' : '履歴書'}
-                    </Button> */}
+                    </Button>
                     <Button
                       style={{ color: 'white' }}
                       onClick={() => setJpn(!jpn)}>
@@ -135,7 +135,7 @@ const Layout: React.FC<Props> = ({
                     aria-controls={open ? 'menu-list-grow' : undefined}
                     aria-haspopup='true'
                     onClick={handleToggle}>
-                    {jpn ? 'お問い合わせ' : 'Contact'}
+                    {jpn ? '問い合わせ' : 'Contact'}
                   </Button>
                   <Popper
                     open={open}
