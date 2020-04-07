@@ -62,7 +62,7 @@ export const data = {
       url: `https://sites.google.com/site/iannauhaus/home/visual-area-segmentation`
     },
     counter: {
-      title: `Fluorecent Cell Detection Algorithm`,
+      title: `Fluorescent Cell Detection Algorithm`,
       content: `Lightweight code that takes the heavy weight off of a life science researcher’s shoulder by automating a very tiring task: fluorescent-dyed cell counting. This code allows any user to automate cell counting on an image by simply adjusting for brightness and eccentricity. Written in Python using the OpenCV computer vision library.`,
       imageSource: `/images/cells.jpg`,
       url: `http://callaway.salk.edu`
@@ -75,7 +75,7 @@ export const data = {
     },
     threeD: {
       title: `Mouse Brain 3D Reconstruction`,
-      content: `Using Java and FIJI(ImageJ), post-mortem brain tissue of a mouse was scanned with a fluorecent microscope and reconstructed using automation before being rendered by the IMARIS 3D engine. The green pixels indicate adeno-associated starter virus carrying a rabies glycoprotein, while the red pixels are the rabies virus that spread in a retrograde matter by only one synapse.`,
+      content: `Using Java and FIJI(ImageJ), post-mortem brain tissue of a mouse was scanned with a fluorescent microscope and reconstructed using automation before being rendered by the IMARIS 3D engine. The green pixels indicate adeno-associated starter virus carrying a rabies glycoprotein, while the red pixels are the rabies virus that spread in a retrograde matter by only one synapse.`,
       imageSource: `/images/3D_Reconstruction.gif`,
       url: `http://callaway.salk.edu`
     },
