@@ -3,7 +3,7 @@ export const data = {
       title: `ReacType`,
       content: `ReacType allows the user to visualize their application architecture dynamically, employing a canvas display, an application tree, and a real-time component code preview. The user can create components and load instances of these components, as well as nested HTML elements, onto the canvas. This architecture can then be exported as TypeScript application files to be used as a starter template for any repository.`,
       imageSource: `/images/reactype.png`,
-      url: `https://reactype.io/`
+      url: `https://github.com/open-source-labs/ReacType`
     },
     reactypejp: {
       title: `ReacType`,
